@@ -1,0 +1,5 @@
+package Weapons;
+
+public abstract class OneHand extends Weapon {
+
+}

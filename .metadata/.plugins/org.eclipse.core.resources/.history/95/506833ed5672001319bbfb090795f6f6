@@ -1,0 +1,11 @@
+
+public class Equipment {
+	Armor head;
+	Armor chest;
+	Armor wrist;
+	Armor hand;
+	Armor leg;
+	Armor feet;
+	Armor neck;
+	Armor finger;
+}

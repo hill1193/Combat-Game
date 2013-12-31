@@ -1,0 +1,7 @@
+
+public abstract class Weapon {
+	int attack;
+	int defense;
+	int speed;
+	int stamina;
+}

@@ -1,0 +1,9 @@
+package Armor;
+
+public abstract class Armor {
+	int attack;
+	int defense;
+	int speed;
+	int stamina;
+	String name;
+}

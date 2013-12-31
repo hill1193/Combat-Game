@@ -1,0 +1,17 @@
+package Weapons;
+
+public abstract class OneHand extends Weapon {
+	int attack;
+	int defense;
+	int speed;
+	int stamina;
+	String name;
+	
+	public OneHand(int attack, int defense, int speed, int stamina, String name) {
+		this.attack = attack;
+		this.defense = defense;
+		this.speed = speed;
+		this.stamina = stamina;
+		this.name = name;
+	}
+}

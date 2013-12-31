@@ -1,0 +1,6 @@
+package Weapons;
+
+public class Sword extends Weapon {
+	static final OneHand woodensword = new Sword(1, 0, 0, 0, "Wooden Sword");
+	static final TwoHand woodenbroadsword = new Sword(2, 0, 0, 0, "Wooden Broadsword");
+}

@@ -1,0 +1,9 @@
+package Weapons;
+
+public abstract class TwoHand extends Weapon {
+	int attack;
+	int defense;
+	int speed;
+	int stamina;
+	String name;
+}

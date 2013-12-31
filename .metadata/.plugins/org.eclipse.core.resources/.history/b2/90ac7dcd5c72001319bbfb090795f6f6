@@ -1,0 +1,39 @@
+
+public class Equipment {
+	Armor head;
+	Armor chest;
+	Armor wrist;
+	Armor hand;
+	Armor leg;
+	Armor feet;
+	Armor neck;
+	Armor finger;
+	
+	public Equipment(Armor head, Armor chest, Armor wrist, Armor hand, Armor leg, Armor feet, Armor neck, Armor finger) {
+		head = null;
+		chest = null;
+		wrist = null;
+		hand = null;
+		leg = null;
+		feet = null;
+		neck = null;
+		finger = null;
+	}
+	
+	public int getBonusAtt() {
+		return this.head.attack;
+	}
+	
+	public int getBonusDef() {
+		return this.head.defense;
+	}
+	
+	public int getBonusSpd() {
+		return this.head.speed;
+	}
+	
+	public int getBonusStam() {
+		return this.head.stamina;
+	}
+		
+}

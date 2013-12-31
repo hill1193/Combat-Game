@@ -1,0 +1,12 @@
+
+public class Helmet extends Armor {
+
+	public Helmet(int attack, int defense, int speed, int stamina) {
+		this.attack = attack;
+		this.defense = defense;
+		this.speed = speed;
+		this.stamina = stamina;
+	}
+	
+	Armor leathercap = new Helmet(0, 1, 1, 1);
+}

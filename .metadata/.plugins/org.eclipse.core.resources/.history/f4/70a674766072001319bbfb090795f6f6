@@ -1,0 +1,10 @@
+package Weapon;
+
+public abstract class Weapon {
+	int attack;
+	int defense;
+	int speed;
+	int stamina;
+	String name;
+	boolean twohand; // true for two handed weapon, false for one handed weapon
+}
