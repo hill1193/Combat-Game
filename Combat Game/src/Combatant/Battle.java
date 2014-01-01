@@ -18,11 +18,11 @@ public class Battle {
 	}
 		
 	public void turninit() {
-			if(this.char1.speed > this.char2.speed) {
+			if(this.char1.getSpeed() > this.char2.getSpeed()) {
 				System.out.println("Player 1's turn");
 				this.turn = true;
 			}
-			else if(this.char1.speed < this.char2.speed) {
+			else if(this.char1.getSpeed() < this.char2.getSpeed()) {
 				System.out.println("Player 2's turn");
 				this.turn = false;
 			}
@@ -31,16 +31,17 @@ public class Battle {
 	
 	public void turn() {
 		if (turn = true) {
-			int dmg = this.char1.attack - (this.char2.defense/2);
-			this.char2.stamina -= dmg;
-			if(this.char2.stamina <= 0) {
+			int dmg = this.char1.getAttack() - (this.char2.getDefense()/2);
+			//hp = this.char2.getHealth();
+			//this.char2.setHealth() -= dmg;
+			if(this.char2.getStamina() <= 0) {
 				System.out.println("Player 2 has been defeated!");
 				return;
 			}
 			else {
-				int dmg1 = this.char2.attack - (this.char1.defense/2);
-				this.char1.stamina -= dmg1;
-				if(this.char1.stamina <= 0) {
+				int dmg1 = this.char2.getAttack() - (this.char1.getDefense()/2);
+				//this.char1.stamina -= dmg1;
+				if(this.char1.getStamina() <= 0) {
 					System.out.println("Player 1 has been defeated!");
 					return;
 			}
@@ -50,16 +51,16 @@ public class Battle {
 			}
 		}
 		else {
-			int dmg = this.char2.attack - (this.char1.defense/2);
-			this.char1.stamina -= dmg;
-			if(this.char1.stamina <= 0) {
+			int dmg = this.char2.getAttack() - (this.char1.getDefense()/2);
+			//this.char1.stamina -= dmg;
+			if(this.char1.getStamina() <= 0) {
 				System.out.println("Player 1 has been defeated!");
 				return;
 			}
 			else {
-				int dmg1 = this.char2.attack - (this.char1.defense/2);
-				this.char1.stamina -= dmg1;
-				if(this.char1.stamina <= 0) {
+				int dmg1 = this.char2.getAttack() - (this.char1.getDefense()/2);
+				//this.char1.stamina -= dmg1;
+				if(this.char1.getStamina() <= 0) {
 					System.out.println("Player 1 has been defeated!");
 					return;
 			}

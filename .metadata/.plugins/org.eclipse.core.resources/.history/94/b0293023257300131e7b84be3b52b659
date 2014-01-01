@@ -1,0 +1,30 @@
+package Combatant;
+import Armor.*;
+import Weapon.*;
+
+public class Equipment {
+	Armor head;
+	Armor chest;
+	Armor wrist;
+	Armor hand;
+	Armor leg;
+	Armor feet;
+	Armor neck;
+	Armor finger;
+	Weapon mainhand;
+	Weapon offhand;
+	
+	public Equipment(Armor head, Armor chest, Armor wrist, Armor hand, Armor leg, Armor feet, Armor neck, Armor finger, Weapon mainhand, Weapon offhand) {
+		this.head = head;
+		this.chest = chest;
+		this.wrist = wrist;
+		this.hand = hand;
+		this.leg = leg;
+		this.feet = feet;
+		this.neck = neck;
+		this.finger = finger;
+		this.mainhand = mainhand;
+		this.offhand = offhand;
+	}
+		
+}

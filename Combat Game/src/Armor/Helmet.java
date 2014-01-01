@@ -10,5 +10,5 @@ public class Helmet extends Armor {
 		this.name = name;
 	}
 	
-	static final Armor leathercap = new Helmet(0, 1, 1, 1, "Leather Cap");
+	public static final Armor leathercap = new Helmet(0, 1, 1, 1, "Leather Cap");
 }

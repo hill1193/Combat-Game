@@ -1,0 +1,46 @@
+package Combatant;
+import Armor.*;
+import Weapon.*;
+
+public class Equipment {
+	Armor head;
+	Armor chest;
+	Armor wrist;
+	Armor hand;
+	Armor leg;
+	Armor feet;
+	Armor neck;
+	Armor finger;
+	Weapon mainhand;
+	Weapon offhand;
+	
+	public Equipment(Armor head, Armor chest, Armor wrist, Armor hand, Armor leg, Armor feet, Armor neck, Armor finger, Weapon mainhand, Weapon offhand) {
+		this.head = head;
+		this.chest = chest;
+		this.wrist = wrist;
+		this.hand = hand;
+		this.leg = leg;
+		this.feet = feet;
+		this.neck = neck;
+		this.finger = finger;
+		this.mainhand = mainhand;
+		this.offhand = offhand;
+	}
+	
+	public int getBonusAtt() {
+		return this.head.getAttack();
+	}
+	
+	public int getBonusDef() {
+		return this.head.getDefense();
+	}
+	
+	public int getBonusSpd() {
+		return this.head.getSpeed();
+	}
+	
+	public int getBonusStam() {
+		return this.head.getStamina();
+	}
+		
+}

@@ -10,6 +10,6 @@ public class Sword extends Weapon {
 		this.twohand = twohand;
 	}
 	
-	static final Weapon woodensword = new Sword(1, 0, 0, 0, "Wooden Sword", false);
-	static final Weapon woodenbroadsword = new Sword(2, 0, 0, 0, "Wooden Broadsword", true);
+	public static final Weapon woodensword = new Sword(1, 0, 0, 0, "Wooden Sword", false);
+	public static final Weapon woodenbroadsword = new Sword(2, 0, 0, 0, "Wooden Broadsword", true);
 }

@@ -10,5 +10,5 @@ public class Chest extends Armor {
 		this.name = name;
 	}
 	
-	static final Armor leatherchest = new Chest(0, 1, 1, 1, "Leather Chest");
+	public static final Armor leatherchest = new Chest(0, 1, 1, 1, "Leather Chest");
 }
