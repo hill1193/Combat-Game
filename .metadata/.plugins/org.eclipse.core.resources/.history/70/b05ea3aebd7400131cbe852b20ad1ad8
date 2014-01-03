@@ -47,6 +47,10 @@ public class Combatant {
 		this.setHealth();
 		this.setEvasion(0);
 		
+		this.updateAttack(0);
+		this.updateDefense(0);
+		this.updateSpeed(0);
+		this.updateStamina(0);
 		scan.close();
 	}
 
@@ -233,6 +237,46 @@ public class Combatant {
 	public void setEvasion(double eva) {
 		this.evasion = roundTo2Decimals(this.getSpeed() * 0.7 + eva);
 	}
+
+	/** updates the combatant's attack **/
+	public void updateAttack(int att) {
+		if(this.gear != null) {
+			this.setAttack(this.getAttack() + att + this.getBonusAtt());
+		}
+		else {
+			this.setAttack(this.getAttack() + att);
+		}
+	}
+	
+	/** updates the combatant's defense **/
+	public void updateDefense(int def) {
+		if(this.gear != null) {
+			this.setDefense(this.getDefense() + def + this.getBonusDef());
+		}
+		else {
+			this.defense = this.getDefense() + def;
+		}
+	}
+	
+	/** updates the combatant's speed **/
+	public void updateSpeed(int spd) {
+		if(this.gear != null) {
+			this.setSpeed(this.getSpeed() + spd + this.getBonusSpd());
+		}
+		else {
+			this.speed = this.getSpeed() + spd;
+		}
+	}
+	
+	/** updates the combatant's stamina **/
+	public void updateStamina(int stam) {
+		if(this.gear != null) {
+			this.setStamina(this.getStamina() + stam + getBonusStam());
+		}
+		else {
+			this.stamina = this.getStamina() + stam;
+		}
+	}
 	
 	/** Sets the combatant's health **/
 	public void setHealth() {
@@ -244,40 +288,45 @@ public class Combatant {
 		this.statpoints = stat;
 	}
 	
+	/** updates the combatant's evasion **/
+	public void updateEvasion() {
+		if(this.gear != null) {
+			this.setEvasion(roundTo2Decimals(this.speed * 0.7) + getBonusEva());
+		}
+		else {
+			this.evasion = roundTo2Decimals(this.speed * 0.7);
+		}
+	}
+	
 	/** Sets the combatant's gear **/
 	public void setGear(Equipment gear) {
 		this.gear = gear;
-		this.getBonusAtt();
-		this.getBonusDef();
-		this.getBonusStam();
-		this.getBonusEva();
-		this.getBonusSpd();
 	}
 	
 	
 	/** Obtains the attack added by the combatant's equipment and applies it**/
 	public void getBonusAtt() {
-		this.setAttack(this.getAttack() + this.gear.getBonusAtt());
+		this.setAttack(this.attack + this.gear.getBonusAtt());
 	}
 	
 	/** Obtains the defense added by the combatant's equipment and applies it**/
-	public void getBonusDef() {
-		this.setDefense(this.getDefense() + this.gear.getBonusDef());
+	public int getBonusDef() {
+		return this.gear.getBonusDef();
 	}
 	
 	/** Obtains the speed added by the combatant's equipment and applies it**/
-	public void getBonusSpd() {
-		this.setSpeed(this.getSpeed() + this.gear.getBonusSpd());
+	public int getBonusSpd() {
+		return this.gear.getBonusSpd();
 	}
 	
 	/** Obtains the stamina added by the combatant's equipment and applies it**/
-	public void getBonusStam() {
-		this.setStamina(this.getStamina() + this.gear.getBonusStam());
+	public int getBonusStam() {
+		return this.gear.getBonusStam();
 	}
 	
 	/** Obtains the evasion added by the combatant's equipment and applies it**/
-	public void getBonusEva() {
-		this.setEvasion(this.getEvasion() + this.gear.getBonusEva());
+	public double getBonusEva() {
+		return this.gear.getBonusEva();
 	}
 	
 	public double roundTo2Decimals(double val) {
@@ -285,25 +334,21 @@ public class Combatant {
     return Double.valueOf(df2.format(val));
 }
 	
-	public void displayStats() {
-		System.out.println("Name: " + this.getName());
-		System.out.println("Attack: " + this.getAttack());
-		System.out.println("Defense:  " + this.getDefense());
-		System.out.println("Speed: " + this.getSpeed());
-		System.out.println("Stamina: " + this.getStamina());
-		System.out.println("Health: " + this.getHealth());
-		System.out.println("Evasion: " + this.getEvasion());
-		System.out.println("Statpoints: " + this.getStatpoints());
-	}
-	
 	/** Main method **/
 	public static void main(String args[]) {
 		Combatant newchar = new Combatant();
-		Equipment newequip = new Equipment(Helmet.leathercap, Chest.leatherchest, Wrist.empty, Hand.empty, Leg.empty, Feet.empty, Neck.empty, Finger.empty, Sword.woodensword, Sword.woodensword);
+		Equipment newequip = new Equipment(Helmet.leathercap, Chest.leatherchest, null, null, null, null, null, null, Sword.woodensword, Sword.woodensword);
 		newchar.createChar();
 		newchar.setGear(newequip);
-		newchar.displayStats();
-		
+		System.out.println("Character Created!");
+		System.out.println("Name: " + newchar.getName());
+		System.out.println("Attack: " + newchar.getAttack());
+		System.out.println("Defense:  " + newchar.getDefense());
+		System.out.println("Speed: " + newchar.getSpeed());
+		System.out.println("Stamina: " + newchar.getStamina());
+		System.out.println("Health: " + newchar.getHealth());
+		System.out.println("Evasion: " + newchar.getEvasion());
+		System.out.println("Statpoints: " + newchar.getStatpoints());
 	}
 }
 

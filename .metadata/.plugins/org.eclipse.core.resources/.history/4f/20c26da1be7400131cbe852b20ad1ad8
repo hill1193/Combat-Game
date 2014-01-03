@@ -257,27 +257,27 @@ public class Combatant {
 	
 	/** Obtains the attack added by the combatant's equipment and applies it**/
 	public void getBonusAtt() {
-		this.setAttack(this.getAttack() + this.gear.getBonusAtt());
+		this.setAttack(this.attack + this.gear.getBonusAtt());
 	}
 	
 	/** Obtains the defense added by the combatant's equipment and applies it**/
 	public void getBonusDef() {
-		this.setDefense(this.getDefense() + this.gear.getBonusDef());
+		this.setDefense(this.defense + this.gear.getBonusDef());
 	}
 	
 	/** Obtains the speed added by the combatant's equipment and applies it**/
 	public void getBonusSpd() {
-		this.setSpeed(this.getSpeed() + this.gear.getBonusSpd());
+		this.setSpeed(this.speed + this.gear.getBonusSpd());
 	}
 	
 	/** Obtains the stamina added by the combatant's equipment and applies it**/
 	public void getBonusStam() {
-		this.setStamina(this.getStamina() + this.gear.getBonusStam());
+		this.setStamina(this.stamina + this.gear.getBonusStam());
 	}
 	
 	/** Obtains the evasion added by the combatant's equipment and applies it**/
 	public void getBonusEva() {
-		this.setEvasion(this.getEvasion() + this.gear.getBonusEva());
+		this.setEvasion(this.evasion + this.gear.getBonusEva());
 	}
 	
 	public double roundTo2Decimals(double val) {
@@ -299,10 +299,9 @@ public class Combatant {
 	/** Main method **/
 	public static void main(String args[]) {
 		Combatant newchar = new Combatant();
-		Equipment newequip = new Equipment(Helmet.leathercap, Chest.leatherchest, Wrist.empty, Hand.empty, Leg.empty, Feet.empty, Neck.empty, Finger.empty, Sword.woodensword, Sword.woodensword);
+		Equipment newequip = new Equipment(Helmet.leathercap, Chest.leatherchest, null, null, null, null, null, null, Sword.woodensword, Sword.woodensword);
 		newchar.createChar();
 		newchar.setGear(newequip);
-		newchar.displayStats();
 		
 	}
 }

@@ -184,7 +184,7 @@ public class Equipment {
 		return att;
 	}
 	
-	/** Calculates the bonus defense of the equipment **/
+	/** Calculates the bonus attack of the equipment **/
 	int getBonusDef() {
 		int def = 0;
 		def += this.head.getDefense();
@@ -201,7 +201,7 @@ public class Equipment {
 		return def;
 	}
 	
-	/** Calculates the bonus speed of the equipment **/
+	/** Calculates the bonus attack of the equipment **/
 	int getBonusSpd() {
 		int spd = 0;
 		spd += this.head.getSpeed();
@@ -218,7 +218,7 @@ public class Equipment {
 		return spd;
 	}
 	
-	/** Calculates the bonus stamina of the equipment **/
+	/** Calculates the bonus attack of the equipment **/
 	int getBonusStam() {
 		int stam = 0;
 		stam += this.head.getStamina();
@@ -235,7 +235,7 @@ public class Equipment {
 		return stam;
 	}
 	
-	/** Calculates the bonus evasion of the equipment **/
+	/** Calculates the bonus attack of the equipment **/
 	int getBonusEva() {
 		int eva = 0;
 		eva += this.head.getEvasion();

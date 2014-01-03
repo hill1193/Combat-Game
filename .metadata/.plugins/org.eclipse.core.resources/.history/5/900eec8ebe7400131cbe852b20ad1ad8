@@ -244,40 +244,45 @@ public class Combatant {
 		this.statpoints = stat;
 	}
 	
+	/** updates the combatant's evasion **/
+	public void updateEvasion() {
+		if(this.gear != null) {
+			this.setEvasion(roundTo2Decimals(this.speed * 0.7) + this.gear.getBonusEva());
+		}
+		else {
+			this.evasion = roundTo2Decimals(this.speed * 0.7);
+		}
+	}
+	
 	/** Sets the combatant's gear **/
 	public void setGear(Equipment gear) {
 		this.gear = gear;
-		this.getBonusAtt();
-		this.getBonusDef();
-		this.getBonusStam();
-		this.getBonusEva();
-		this.getBonusSpd();
 	}
 	
 	
 	/** Obtains the attack added by the combatant's equipment and applies it**/
 	public void getBonusAtt() {
-		this.setAttack(this.getAttack() + this.gear.getBonusAtt());
+		this.setAttack(this.attack + this.gear.getBonusAtt());
 	}
 	
 	/** Obtains the defense added by the combatant's equipment and applies it**/
 	public void getBonusDef() {
-		this.setDefense(this.getDefense() + this.gear.getBonusDef());
+		this.setDefense(this.defense + this.gear.getBonusDef());
 	}
 	
 	/** Obtains the speed added by the combatant's equipment and applies it**/
 	public void getBonusSpd() {
-		this.setSpeed(this.getSpeed() + this.gear.getBonusSpd());
+		this.setSpeed(this.speed + this.gear.getBonusSpd());
 	}
 	
 	/** Obtains the stamina added by the combatant's equipment and applies it**/
 	public void getBonusStam() {
-		this.setStamina(this.getStamina() + this.gear.getBonusStam());
+		this.setStamina(this.stamina + this.gear.getBonusStam());
 	}
 	
 	/** Obtains the evasion added by the combatant's equipment and applies it**/
 	public void getBonusEva() {
-		this.setEvasion(this.getEvasion() + this.gear.getBonusEva());
+		this.setEvasion(this.evasion + this.gear.getBonusEva());
 	}
 	
 	public double roundTo2Decimals(double val) {
@@ -285,25 +290,21 @@ public class Combatant {
     return Double.valueOf(df2.format(val));
 }
 	
-	public void displayStats() {
-		System.out.println("Name: " + this.getName());
-		System.out.println("Attack: " + this.getAttack());
-		System.out.println("Defense:  " + this.getDefense());
-		System.out.println("Speed: " + this.getSpeed());
-		System.out.println("Stamina: " + this.getStamina());
-		System.out.println("Health: " + this.getHealth());
-		System.out.println("Evasion: " + this.getEvasion());
-		System.out.println("Statpoints: " + this.getStatpoints());
-	}
-	
 	/** Main method **/
 	public static void main(String args[]) {
 		Combatant newchar = new Combatant();
-		Equipment newequip = new Equipment(Helmet.leathercap, Chest.leatherchest, Wrist.empty, Hand.empty, Leg.empty, Feet.empty, Neck.empty, Finger.empty, Sword.woodensword, Sword.woodensword);
+		Equipment newequip = new Equipment(Helmet.leathercap, Chest.leatherchest, null, null, null, null, null, null, Sword.woodensword, Sword.woodensword);
 		newchar.createChar();
 		newchar.setGear(newequip);
-		newchar.displayStats();
-		
+		System.out.println("Character Created!");
+		System.out.println("Name: " + newchar.getName());
+		System.out.println("Attack: " + newchar.getAttack());
+		System.out.println("Defense:  " + newchar.getDefense());
+		System.out.println("Speed: " + newchar.getSpeed());
+		System.out.println("Stamina: " + newchar.getStamina());
+		System.out.println("Health: " + newchar.getHealth());
+		System.out.println("Evasion: " + newchar.getEvasion());
+		System.out.println("Statpoints: " + newchar.getStatpoints());
 	}
 }
 
